@@ -1,5 +1,7 @@
 package svetlak.alex;
 
+import com.codeborne.selenide.SelenideElement;
+
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
@@ -8,7 +10,21 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
 
-    SelenideElements selenideElements = new SelenideElements();
+    public SelenideElement
+            firstName = $("#firstName"),
+            lastName = $("#lastName"),
+            emailInput = $("#userEmail"),
+            gender = $(byText("Male")),
+            userNumber = $("#userNumber"),
+            subjectsInput = $("#subjectsInput"),
+            english = $(byText("English")),
+            hobbies = $(byText("Reading")),
+            uploadPicture = $("#uploadPicture"),
+            currentAddress = $("#currentAddress"),
+            state = $("#state"),
+            city = $("#city"),
+            submitClick = $("#submit"),
+            responsTable = $(".table-responsive");
 
     public RegistrationPage openPage(String url) {
         open(url);
@@ -16,78 +32,78 @@ public class RegistrationPage {
     }
 
     public RegistrationPage fillFirstName(String name) {
-        $(selenideElements.firstName).setValue(name);
+        $(firstName).setValue(name);
         return this;
     }
 
     public RegistrationPage fillFamilyName(String familyName) {
-        $(selenideElements.lastName).setValue(familyName);
+        $(lastName).setValue(familyName);
         return this;
     }
     public RegistrationPage setEmail() {
-        $(selenideElements.emailInput).setValue("email@mail.com");
+        $(emailInput).setValue("email@mail.com");
         return this;
     }
 
     public RegistrationPage setMobile() {
-        $(selenideElements.userNumber).setValue("7775166561");
+        $(userNumber).setValue("7775166561");
         return this;
     }
 
     public RegistrationPage setGender() {
-        $(selenideElements.gender).click();
+        $(gender).click();
         return this;
     }
 
-    public RegistrationPage fillCalendar() {
+    public RegistrationPage fillCalendar(String day, String month, String year ) {
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOptionByValue("4");
-        $(".react-datepicker__year-select").selectOptionByValue("1990");
-        $(".react-datepicker__day.react-datepicker__day--013").click();
+        $(".react-datepicker__month-select").selectOptionByValue(month);
+        $(".react-datepicker__year-select").selectOptionByValue(year);
+        $(".react-datepicker__day-select").selectOptionByValue(day);
         return this;
     }
 
     public RegistrationPage setSubject() {
-        $(selenideElements.subjectsInput).click();
-        $(selenideElements.subjectsInput).sendKeys("Comp");
+        $(subjectsInput).click();
+        $(subjectsInput).sendKeys("Comp");
         $(byText("Computer Science")).click();
         return this;
     }
 
     public RegistrationPage setHobbies() {
-        $(selenideElements.hobbies).click();
+        $(hobbies).click();
         return this;
     }
 
     public RegistrationPage uploadPicture() {
-        $(selenideElements.uploadPicture).uploadFile(new File("src//test//resources//t8i0r1.jpg"));
+        $(uploadPicture).uploadFile(new File("src//test//resources//t8i0r1.jpg"));
         return this;
     }
 
     public RegistrationPage setAdress(String adress) {
-        $(selenideElements.currentAddress).setValue(adress);
+        $(currentAddress).setValue(adress);
         return this;
     }
 
     public RegistrationPage setState() {
-        $(selenideElements.state).click();
+        $(state).click();
         $(byText("Haryana")).click();
         return this;
     }
 
     public RegistrationPage setCity() {
-        $(selenideElements.city).click();
+        $(city).click();
         $(byText("Panipat")).click();
         return this;
     }
 
     public RegistrationPage clickSubmit() {
-        $(selenideElements.submitClick).click();
+        $(submitClick).click();
         return this;
     }
 
     public RegistrationPage checkResult(String label, String value) {
-        selenideElements.responsTable
+        responsTable
                 .$(byText(label))
                 .parent()
                 .shouldHave(text(value));

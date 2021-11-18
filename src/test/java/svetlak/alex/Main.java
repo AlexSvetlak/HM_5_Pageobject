@@ -14,7 +14,7 @@ public class Main extends TestBase {
                 .setEmail()
                 .setMobile()
                 .setGender()
-                .fillCalendar()
+                .fillCalendar("13","4","1990")
                 .setSubject()
                 .setHobbies()
                 .uploadPicture()
