@@ -5,7 +5,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
-
+    // Добавляю новый коментарий для домашнего задания по гиту
     public RegistrationPage registrationPage = new RegistrationPage();
     RandomFacker randomFacker = new RandomFacker();
     CheckTests checkTests = new CheckTests();
