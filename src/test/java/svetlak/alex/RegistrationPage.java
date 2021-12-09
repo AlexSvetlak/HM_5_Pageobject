@@ -17,7 +17,7 @@ public class RegistrationPage {
             gender = $(byText("Male")),
             userNumber = $("#userNumber"),
             subjectsInput = $("#subjectsInput"),
-            english = $(byText("English")),
+//            english = $(byText("English")),
             hobbies = $(byText("Reading")),
             uploadPicture = $("#uploadPicture"),
             currentAddress = $("#currentAddress"),
