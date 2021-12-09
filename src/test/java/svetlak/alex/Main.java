@@ -29,9 +29,9 @@ public class Main extends TestBase {
                 .checkResult("Gender", "Male")
                 .checkResult("Mobile", "7775166561")
                 .checkResult("Date of Birth", "13 May,1990")
-                .checkResult("Subjects", "Computer Science")
-                .checkResult("Hobbies", "Reading")
-                .checkResult("Picture", "t8i0r1.jpg")
+//                .checkResult("Subjects", "Computer Science")
+//                .checkResult("Hobbies", "Reading")
+//                .checkResult("Picture", "t8i0r1.jpg")
                 .checkResult("Address", randomFacker.address)
                 .checkResult("State and City", "Haryana Panipat");
     }
