@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
 
-    public SelenideElement
+    public SelenideElement //комит для проверки ssh ключа
             firstName = $("#firstName"),
             lastName = $("#lastName"),
             emailInput = $("#userEmail"),
@@ -31,8 +31,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage fillFirstName(String name) {
-        $(firstName).setValue(name);
+    public RegistrationPage fillFirstName(String name, String familyName) {
+        firstName.setValue(name);
+        lastName.setValue(familyName);
         return this;
     }
 
@@ -109,6 +110,8 @@ public class RegistrationPage {
                 .shouldHave(text(value));
         return this;
     }
+
+
 
 }
 

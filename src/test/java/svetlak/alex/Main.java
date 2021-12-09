@@ -9,7 +9,7 @@ public class Main extends TestBase {
     void newRegistration(){
         registrationPage
                 .openPage(URL)
-                .fillFirstName(randomFacker.firstName)
+                .fillFirstName(randomFacker.firstName, randomFacker.lastName)
                 .fillFamilyName(randomFacker.lastName)
                 .setEmail()
                 .setMobile()
