@@ -24,8 +24,8 @@ public class Main extends TestBase {
                 .clickSubmit();
 
         checkTests
-                .checkResult("Student Name", randomFacker.firstName + " " + randomFacker.lastName)
-                .checkResult("Student Email", "email@mail.com")
+//                .checkResult("Student Name", randomFacker.firstName + " " + randomFacker.lastName)
+//                .checkResult("Student Email", "email@mail.com")
                 .checkResult("Gender", "Male")
                 .checkResult("Mobile", "7775166561")
                 .checkResult("Date of Birth", "13 May,1990")
