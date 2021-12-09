@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class Main extends TestBase {
     private final String URL = "https://demoqa.com/automation-practice-form";
-
+    //Коментарий для домашнего задания по гиту
     @Test
     void newRegistration(){
         registrationPage
